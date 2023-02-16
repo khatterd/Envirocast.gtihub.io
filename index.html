@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
  <title>EnviroCast</title>
@@ -14,22 +14,32 @@
   </div>
   <div class="middle-box">
     <div class="card-container">
-      <div class="card brampton">
+      <div class="card" id = "b">
         <p>Brampton</p>
+        <p id = "brampton"></p>
       </div>
-      <div class="card toronto">
-        <p>Toronto</p>
+      <div class="card">
+        <p>Chandigarh</p>
+        <p id = "chandigarh"></p>
     </div>
-      <div class="card mississauga">
-        <p>Mississauga</p>
+      <div class="card">
+        <p>New York</p>
+        <p id = "newyork"></p>
       </div>
     </div>
     </div>
   </div>
-  <h3>Weather Details</h3>
+  <h3>Any other City ?</h3>
   <div id="bottom-box">
+    <form id="frmUserInfo" name="frmUserInfo" action="#"  method="GET">
+<input type="text" name="other" id="other"/>
+</form>
+<button onclick="Other()">submit</button>
+<button id  = "hey">hey</button>
 
+<p id = "otherOutput"></p>
   </div>
+
   </body>
   <script src="script.js"></script>
 </html>

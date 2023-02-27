@@ -34,7 +34,8 @@ function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
       method: 'GET',
-      url: '/api/weather?city=' + city,
+      url: 'http://localhost:' + process.env.PORT + '/v1/weather?city='
+      + city,
       contentType: 'application/json',
       success: function(result) {
         resolve(result);
@@ -53,7 +54,8 @@ function getWeather(city) {
         var city = c;
         $.ajax({
             method: 'GET',
-            url: '/api/weather?city=' + city,
+            url: 'http://localhost:' + process.env.PORT + '/v1/weather?city='
+            + city,
             contentType: 'application/json',
             success: function(result) {
                 console.log(result);

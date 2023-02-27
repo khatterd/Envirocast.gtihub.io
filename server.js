@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 
-const apiProxy = createProxyMiddleware('/v1/weather', {
+const apiProxy = createProxyMiddleware('/api/weather', {
     target: 'https://api.api-ninjas.com',
     changeOrigin: true,
     headers: {
@@ -14,7 +14,7 @@ const apiProxy = createProxyMiddleware('/v1/weather', {
     }
 });
 
-app.use('/v1/weather', apiProxy);
+app.use('/api/weather', apiProxy);
 
 // Listen on the default Vercel port
 app.listen(process.env.PORT || 3000, () => {

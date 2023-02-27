@@ -1,25 +1,38 @@
 var cities = ["brampton", "chandigarh", "new york"]
 
-function LoadWeather()
-{
-    for (let x of cities)
-    {
-        var city = x
-        $.ajax({
-        method: 'GET',
-        url: 'http://localhost:3000/v1/weather?city=' + city,
-        contentType: 'application/json',
-        success: function(result) {
-            console.log(result);
-            var bout = document.getElementById(x);
-            bout.innerHTML = result.temp;
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-        }
+function getWeather(city) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      method: 'GET',
+      url: 'http://localhost:3000/v1/weather?city=' + city,
+      contentType: 'application/json',
+      success: function(result) {
+        resolve(result.temp);
+      },
+      error: function ajaxError(jqXHR) {
+        reject(new Error('Error: ' + jqXHR.responseText));
+      }
     });
-    }
+  });
 }
+
+function LoadWeather() {
+  var promises = cities.map(function(city) {
+    return getWeather(city);
+  });
+
+  Promise.all(promises)
+    .then(function(results) {
+      results.forEach(function(temp, index) {
+        var bout = document.getElementById(cities[index]);
+        bout.innerHTML = temp;
+      });
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+}
+
    function Other()
     {
         var c = document.frmUserInfo.other.value;
@@ -39,9 +52,3 @@ function LoadWeather()
         });
     }
 
-document.getElementById("b").addEventListener("click", fun);
-    document.getElementById("hey").addEventListener("click", fun);
-
-    function fun () {
-        console.log("hello");
-    }

@@ -14,12 +14,12 @@ function LoadWeather() {
           <li class="list-group-item d-flex justify-content-center align-items-center">
           <div">
             <div class="fw-bold" id = "temp" >${result.temp}&#176 C</div>
-            H: ${result.temp}   L: ${result.temp}
+            H: ${result.max_temp}   L: ${result.min_temp}
           </div>
-          <li class="list-group-item"> Wind Speed : ${result.temp}</li>
-          <li class="list-group-item"> Feels Like : ${result.temp}</li>
-          <li class="list-group-item"> Humidity : ${result.temp}</li>
-          <li class="list-group-item"> High : ${result.temp} Low: ${result.temp}</li>
+          <li class="list-group-item"> Wind Speed : ${result.wind_speed}</li>
+          <li class="list-group-item"> Feels Like : ${result.feels_like}</li>
+          <li class="list-group-item"> Humidity : ${result.humidity}</li>
+          <li class="list-group-item"> High : ${result.max_temp} Low: ${result.min_temp}</li>
           </ul>
           `;
           
@@ -58,8 +58,20 @@ function getWeather(city) {
             success: function(result) {
                 console.log(result);
                 var out = document.getElementById('otherOutput');
-            out.innerHTML = result.temp;
-            document.querySelector('#searchCity').innerHTML = city;
+            out.innerHTML = ` <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-center align-items-center">
+            <div">
+              <div class="fw-bold" id = "temp" >${result.temp}&#176 C</div>
+              H: ${result.max_temp}   L: ${result.min_temp}
+            </div>
+            <li class="list-group-item"> Wind Speed : ${result.wind_speed}</li>
+            <li class="list-group-item"> Feels Like : ${result.feels_like}</li>
+            <li class="list-group-item"> Humidity : ${result.humidity}</li>
+            <li class="list-group-item"> High : ${result.max_temp} Low: ${result.min_temp}</li>
+            </ul>
+            `;
+            document.querySelector('#otherCardTitle').innerHTML = city;
+
             },
             error: function ajaxError(jqXHR) {
                 console.error('Error: ', jqXHR.responseText);

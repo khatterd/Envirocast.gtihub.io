@@ -17,11 +17,14 @@
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aclonica&family=Alfa+Slab+One&family=Boogaloo&family=Dancing+Script:wght@700&family=Passions+Conflict&family=Peralta&display=swap" rel="stylesheet">
     <title>EnviroCast</title>
   </head>
   <body onload="LoadWeather()">
     <div class="top-box">
-      <h1>EnviroCast</h1>
+      <h1>~ EnviroCast ~</h1>
     </div>
     <div class="container">
       <div class="middle-box mx-auto">
@@ -56,11 +59,12 @@
         </div>
       </div>
     </div>
-    <h3>Any other City ?</h3>
+    <br><br>
+    <h3>Got another city on your mind?</h3>
     <div id="bottom-box">
       <form id="frmUserInfo" name="frmUserInfo" action="#" method="GET">
         <input type="text" name="other" id="other" />
-      </form>
+      </form><br>
       <button
         type="button"
         class="btn btn-primary"
@@ -68,10 +72,8 @@
         data-bs-target="#staticBackdrop"
         onclick="Other()"
       >
-        submit
+        Get Info
       </button>
-
-      <p id="otherOutput"></p>
     </div>
     <!-- Button trigger modal -->
 
@@ -93,13 +95,13 @@
                 <div class="row row-cols-1">
                   <div class="col">
                     <div
-                      class="card text-bg-dark"
+                      class="card1 text-bg-dark"
                       style="width: 20rem; height: 25rem"
                     >
                       <img id="bramptonBackground" class="card-img" alt="..." />
-                      <div class="card-img-overlay">
-                        <h5 class="card-title">Brampton</h5>
-                        <p class="card-text" id="brampton"></p>
+                      <div >
+                        <h5 id = 'otherCardTitle' class="card-title"></h5>
+                        <p class="card-text" id="otherOutput"></p>
                       </div>
                     </div>
                   </div>

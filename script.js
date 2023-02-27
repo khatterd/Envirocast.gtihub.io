@@ -1,5 +1,23 @@
 var cities = ["brampton", "chandigarh", "new york"]
 
+
+function LoadWeather() {
+    var promises = cities.map(function(city) {
+      return getWeather(city);
+    });
+  
+    Promise.all(promises)
+      .then(function(results) {
+        results.forEach(function(temp, index) {
+          var bout = document.getElementById(cities[index]);
+          bout.innerHTML = temp;
+        });
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  }
+  
 function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
@@ -14,23 +32,6 @@ function getWeather(city) {
       }
     });
   });
-}
-
-function LoadWeather() {
-  var promises = cities.map(function(city) {
-    return getWeather(city);
-  });
-
-  Promise.all(promises)
-    .then(function(results) {
-      results.forEach(function(temp, index) {
-        var bout = document.getElementById(cities[index]);
-        bout.innerHTML = temp;
-      });
-    })
-    .catch(function(error) {
-      console.error(error);
-    });
 }
 
    function Other()

@@ -1,3 +1,12 @@
+body {
+  background-color: lavender;
+}
+
+#temp{
+  font-size: 2rem;
+  text-align: center;
+}
+
 .top-box{
     text-align: center;
     margin-bottom: 30px;
@@ -28,3 +37,8 @@ h3{
   .col {
     padding: 0 2rem;
   }
+.list-group-item-indigo
+{
+  background-color: indigo;
+  color:white;
+}

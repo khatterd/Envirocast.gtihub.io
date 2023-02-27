@@ -1,4 +1,4 @@
-var cities = ["brampton", "chandigarh", "new york"];
+var cities = ["brampton", "chandigarh", "new york"]
 
 
 function LoadWeather() {
@@ -34,12 +34,8 @@ function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
       method: 'GET',
-      url: 'https://api.api-ninjas.com/v1/weather?city=' + city,
-      headers: { 'X-Api-Key': 'i3GlPtu1RgHdbWp5A5uo0A==pYXme5cs3LcU7U6t'},
+      url: 'http://localhost:3000/v1/weather?city=' + city,
       contentType: 'application/json',
-      xhrFields: {
-        withCredentials: true
-      },
       success: function(result) {
         resolve(result);
         console.log(result)
@@ -56,13 +52,10 @@ function getWeather(city) {
         var c = document.frmUserInfo.other.value;
         var city = c;
         $.ajax({
-          url: 'https://api.api-ninjas.com/v1/weather?city=' + city,
-          headers: { 'X-Api-Key': 'i3GlPtu1RgHdbWp5A5uo0A==pYXme5cs3LcU7U6t'},
-          contentType: 'application/json',
-          xhrFields: {
-            withCredentials: true
-          },
-          success: function(result) {
+            method: 'GET',
+            url: 'http://localhost:3000/v1/weather?city=' + city,
+            contentType: 'application/json',
+            success: function(result) {
                 console.log(result);
                 var out = document.getElementById('otherOutput');
             out.innerHTML = result.temp;
@@ -73,3 +66,4 @@ function getWeather(city) {
             }
         });
     }
+

@@ -1,4 +1,4 @@
-var cities = ["brampton", "chandigarh", "new york"]
+var cities = ["brampton", "chandigarh", "new york"];
 
 
 function LoadWeather() {
@@ -34,7 +34,7 @@ function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/v1/weather?city=' + city,
+      url: '/api/weather?city=' + city,
       contentType: 'application/json',
       success: function(result) {
         resolve(result);
@@ -53,7 +53,7 @@ function getWeather(city) {
         var city = c;
         $.ajax({
             method: 'GET',
-            url: 'http://localhost:3000/v1/weather?city=' + city,
+            url: '/api/weather?city=' + city,
             contentType: 'application/json',
             success: function(result) {
                 console.log(result);
@@ -66,4 +66,3 @@ function getWeather(city) {
             }
         });
     }
-

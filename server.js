@@ -16,6 +16,7 @@ const apiProxy = createProxyMiddleware('/v1/weather', {
 
 app.use('/v1/weather', apiProxy);
 
-app.listen(3000, () => {
-    console.log('Proxy server listening on port 3000');
+// Listen on the default Vercel port
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Proxy server listening on port ${process.env.PORT || 3000}`);
 });

@@ -2,18 +2,7 @@
     text-align: center;
     margin-bottom: 30px;
 }
-.card {
-    background-color: lavender;
-    color: black;
-    width: 100%;
-    text-align: center;
-    height: 300px;
-}
-.card-container {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-}
+
 .bottom-box{
     margin-top: 30px;
     border: 3px solid black;
@@ -22,3 +11,20 @@
 h3{
     text-align: center;
 }
+.middle-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .col {
+    padding: 0 2rem;
+  }

@@ -34,7 +34,7 @@ function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
       method: 'GET',
-      url: 'https://envirocast-gtihub-io.vercel.app/v1/weather?city=' + city,
+      url: 'https://envirocast-gtihub-io.vercel.app/api/v1/weather?city=' + city,
       contentType: 'application/json',
       success: function(result) {
         resolve(result);
@@ -53,7 +53,7 @@ function getWeather(city) {
         var city = c;
         $.ajax({
             method: 'GET',
-            url: 'https://envirocast-gtihub-io.vercel.app/v1/weather?city=' + city,
+            url: 'https://envirocast-gtihub-io.vercel.app/api/v1/weather?city=' + city,
             contentType: 'application/json',
             success: function(result) {
                 

@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-app.use('/api/v1/weather', createProxyMiddleware({
+app.use('/v1/weather', createProxyMiddleware({
   target: 'https://api.api-ninjas.com',
   changeOrigin: true,
   headers: {

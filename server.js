@@ -1,8 +1,9 @@
 const express = require('express');
+const app = express();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const cors = require('cors');
 
-const app = express();
+
 
 app.use(cors());
 
@@ -16,7 +17,6 @@ const apiProxy = createProxyMiddleware('/v1/weather', {
 
 app.use('/v1/weather', apiProxy);
 
-// Listen on the Vercel assigned port
-app.listen(process.env.PORT, () => {
-    console.log(`Proxy server listening on port ${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log(`Proxy server listening on port 3000`);
 });

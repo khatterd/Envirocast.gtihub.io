@@ -38,7 +38,7 @@ function getWeather(city) {
       contentType: 'application/json',
       success: function(result) {
         resolve(result);
-        console.log(result)
+        
       },
       error: function ajaxError(jqXHR) {
         reject(new Error('Error: ' + jqXHR.responseText));
@@ -56,7 +56,7 @@ function getWeather(city) {
             url: 'https://envirocast-gtihub-io.vercel.app/v1/weather?city=' + city,
             contentType: 'application/json',
             success: function(result) {
-                console.log(result);
+                
                 var out = document.getElementById('otherOutput');
             out.innerHTML = ` <ul class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-center align-items-center">

@@ -7,7 +7,7 @@ app.use('/api/v1/weather', createProxyMiddleware({
   target: 'https://api.api-ninjas.com',
   changeOrigin: true,
   headers: {
-    'X-Api-Key': process.env.API_KEY
+    'X-Api-Key': "i3GlPtu1RgHdbWp5A5uo0A==pYXme5cs3LcU7U6t"
   }
 }));
 

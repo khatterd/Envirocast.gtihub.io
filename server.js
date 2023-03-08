@@ -12,7 +12,7 @@ app.use('/v1/weather', createProxyMiddleware({
   }
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 const PORT = process.env.PORT || 3000; // use the port provided by Heroku, or default to 3000 if not available
 
@@ -21,7 +21,3 @@ app.listen(PORT, () => {
 });
 
 app.get('/favicon.ico', (req, res) => res.status(204));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});

@@ -17,9 +17,12 @@
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aclonica&family=Alfa+Slab+One&family=Boogaloo&family=Dancing+Script:wght@700&family=Passions+Conflict&family=Peralta&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aclonica&family=Alfa+Slab+One&family=Boogaloo&family=Dancing+Script:wght@700&family=Passions+Conflict&family=Peralta&display=swap"
+      rel="stylesheet"
+    />
     <title>EnviroCast</title>
   </head>
   <body onload="LoadWeather()">
@@ -31,7 +34,6 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card text-bg-dark" style="width: 20rem; height: 25rem">
-             
               <div class="card-img-overlay">
                 <h5 class="card-title">Brampton</h5>
                 <p class="card-text" id="brampton"></p>
@@ -40,7 +42,6 @@
           </div>
           <div class="col">
             <div class="card text-bg-dark" style="width: 20rem; height: 25rem">
-          <!--    <img id="bramptonBackground" class="card-img" alt="..." />-->
               <div class="card-img-overlay">
                 <h5 class="card-title">Chandigarh</h5>
                 <p class="card-text" id="chandigarh"></p>
@@ -49,7 +50,6 @@
           </div>
           <div class="col">
             <div class="card text-bg-dark" style="width: 20rem; height: 25rem">
-       
               <div class="card-img-overlay">
                 <h5 class="card-title">New York</h5>
                 <p class="card-text" id="new york"></p>
@@ -59,12 +59,13 @@
         </div>
       </div>
     </div>
-    <br><br>
+    <br /><br />
     <h3>Got another city on your mind?</h3>
     <div id="bottom-box">
       <form id="frmUserInfo" name="frmUserInfo" action="#" method="GET">
         <input type="text" name="other" id="other" />
-      </form><br>
+      </form>
+      <br />
       <button
         type="button"
         class="btn btn-primary"
@@ -99,8 +100,8 @@
                       style="width: 20rem; height: 25rem"
                     >
                       <img id="bramptonBackground" class="card-img" alt="..." />
-                      <div >
-                        <h5 id = 'otherCardTitle' class="card-title"></h5>
+                      <div>
+                        <h5 id="otherCardTitle" class="card-title"></h5>
                         <p class="card-text" id="otherOutput"></p>
                       </div>
                     </div>

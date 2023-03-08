@@ -14,3 +14,4 @@ app.use('/v1/weather', createProxyMiddleware({
 app.listen(3000, () => {
   console.log('Proxy server listening on port 3000');
 });
+app.get('/favicon.ico', (req, res) => res.status(204));

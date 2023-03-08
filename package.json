@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A proxy server for a weather API",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'This is a no-op build script'"
   },
   "dependencies": {
     "cors": "^2.8.5",

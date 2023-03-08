@@ -11,7 +11,10 @@ app.use('/v1/weather', createProxyMiddleware({
   }
 }));
 
-app.listen(3000, () => {
-  console.log('Proxy server listening on port 3000');
+const PORT = process.env.PORT || 3000; // use the port provided by Heroku, or default to 3000 if not available
+
+app.listen(PORT, () => {
+  console.log(`Proxy server listening on port ${PORT}`);
 });
+
 app.get('/favicon.ico', (req, res) => res.status(204));

@@ -1,5 +1,6 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
+const path = require('path');
 
 const app = express();
 
@@ -11,10 +12,16 @@ app.use('/v1/weather', createProxyMiddleware({
   }
 }));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 const PORT = process.env.PORT || 3000; // use the port provided by Heroku, or default to 3000 if not available
 
 app.listen(PORT, () => {
-  console.log(`Proxy server listening on port ${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
 
 app.get('/favicon.ico', (req, res) => res.status(204));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});

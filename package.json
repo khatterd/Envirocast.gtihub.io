@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "A proxy server for a weather API",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js & npm run open",
+    "open": "open http://localhost:3000",
     "build": "echo 'This is a no-op build script'"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "http-proxy-middleware": "^2.0.6"
+    "http-proxy-middleware": "^2.0.6",
+    "open": "^8.4.2"
   }
 }

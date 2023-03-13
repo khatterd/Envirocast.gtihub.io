@@ -11,13 +11,10 @@ Envirocast is a real-time weather app that displays accurate and up-to-date weat
 
 ## Getting Started
 
-To use Envirocast, simply visit https://envirocast.herokuapp.com/ and enter your desired location in the search bar. Envirocast will then display real-time weather data for your location.
-
 To install Envirocast locally, follow these steps:
 
 1. Clone this repository to your local machine.
-2. Run `npm install` to install the app's dependencies.
-3. Run `npm start` to start the app locally.
+2. Run `npm start` to start the app locally.
 
 ## Contributing
 

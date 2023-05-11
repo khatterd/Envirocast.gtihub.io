@@ -1,8 +1,14 @@
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
+const portfinder = require('portfinder');
+const cors = require('cors');
+const open = require('open');
 
 const app = express();
+
+// Use CORS middleware
+app.use(cors());
 
 app.use('/v1/weather', createProxyMiddleware({
   target: 'https://api.api-ninjas.com',
@@ -12,12 +18,20 @@ app.use('/v1/weather', createProxyMiddleware({
   }
 }));
 
+app.get('/favicon.ico', (req, res) => res.status(204)); // Move this line up
+
 app.use(express.static(__dirname));
 
-const PORT = process.env.PORT || 3000; // use the port provided by Heroku, or default to 3000 if not available
+portfinder.basePort = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+portfinder.getPort((err, PORT) => {
+  if (err) {
+    throw new Error(err);
+  } else {
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+      open('http://localhost:' + PORT);
+    });
+    app.get('/api/port', (req, res) => res.send({ port: PORT }));
+  }
 });
-
-app.get('/favicon.ico', (req, res) => res.status(204));

@@ -1,5 +1,4 @@
-var cities = ["brampton", "chandigarh", "new york"]
-
+var cities = ["brampton", "chandigarh", "new york"];
 
 function LoadWeather() {
     var promises = cities.map(function(city) {
@@ -34,7 +33,7 @@ function getWeather(city) {
   return new Promise(function(resolve, reject) {
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/v1/weather?city=' + city,
+      url: window.location.href + 'v1/weather?city=' + city,
       contentType: 'application/json',
       success: function(result) {
         resolve(result);
@@ -53,7 +52,7 @@ function getWeather(city) {
         var city = c;
         $.ajax({
             method: 'GET',
-            url: 'http://localhost:3000/v1/weather?city=' + city,
+            url: window.location.href + 'v1/weather?city=' + city,
             contentType: 'application/json',
             success: function(result) {
                 
